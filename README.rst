@@ -46,7 +46,7 @@ Usage
   Default value is `8`.
 
 * `commands`
-  Executed when the scprit starts.
+  Executed when the script starts.
 
 Output
 ======
@@ -57,5 +57,5 @@ example: ::
   time, cpu0 (ondemand), cpu1 (ondemand), cpu2(ondemand), cpu3(ondemand), cpu4(ondemand)
   123456.789, 14000, 14000, 14000, 14000
 
-the value in paren is the governor used for the cpu.
+the value in parentheses is the governor used for the cpu.
 `time` is in format `%H%M%S.%3N`.
