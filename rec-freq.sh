@@ -2,12 +2,12 @@
 
 INTERVAL=0.1 # seconds
 OUT=./out.csv
-TIME=300
+TIME=300 # seconds
 CORE=8
 
 
 usage_exit() {
-    echo "Usage: $0 [-h] [-i interval sec] [-t time sec] [-o output file] commands" 1>&2
+    echo "Usage: $0 [-h] [-i interval sec] [-t end sec] [-o output file] [-c core counts] commands" 1>&2
     exit 1
 }
 
