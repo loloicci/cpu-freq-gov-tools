@@ -5,7 +5,7 @@
 #include <string.h>
 
 int usage_exit(){
-  fprintf(stderr, "Usage: $0 [-h] [-i interval sec] [-t end sec] [-o output file] [-c core counts] commands");
+  fprintf(stderr, "Usage: $0 [-h] [-i interval sec] [-t end sec] [-o output file] [-c core counts]");
   exit(1);
 }
 
@@ -20,8 +20,12 @@ void write_first_line(FILE *fp, FILE **files, int core){
         break;
       }
     }
+    char cpu[16];
+    sprintf(cpu, "cpu%d(", i);
     strncat(line, ", ", 1024);
+    strncat(line, cpu, 1024);
     strncat(line, f, 1024);
+    strncat(line, ")", 1024);
     fclose(files[i]);
   }
   fprintf(fp, "%s\n", line);
