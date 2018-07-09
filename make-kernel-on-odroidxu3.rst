@@ -30,7 +30,7 @@ https://forum.odroid.com/viewtopic.php?f=52&t=2948
 fdisk で XXXXp2 を，空き容量をすべて使用するようにリサイズすれば良い．
 
 その後，この micro SD で odroid を起動し，
-`resize2fs /dev/mmcblk0p2` を実行する．
+``resize2fs /dev/mmcblk0p2`` を実行する．
 
 以上でパーティションが拡張される．
 
