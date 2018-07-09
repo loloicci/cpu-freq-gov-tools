@@ -50,24 +50,21 @@ https://github.com/hardkernel/linux
 Build と Install
 ================
 https://wiki.odroid.com/odroid-xu4/software/building_kernel の
-4.14.y に従って行う．
+4.14.y に従って行う． ::
 
-```
-$ make odroidxu4_defconfig
-$ make -j8
-$ sudo make modules_install
-$ sudo cp -f arch/arm/boot/zImage /media/boot
-$ sudo cp -f arch/arm/boot/dts/exynos5422-odroidxu3.dtb /media/boot
-$ sudo cp -f arch/arm/boot/dts/exynos5422-odroidxu4.dtb /media/boot
-$ sudo cp -f arch/arm/boot/dts/exynos5422-odroidxu3-lite.dtb /media/boot
-$ sync
-```
+  $ make odroidxu4_defconfig
+  $ make -j8
+  $ sudo make modules_install
+  $ sudo cp -f arch/arm/boot/zImage /media/boot
+  $ sudo cp -f arch/arm/boot/dts/exynos5422-odroidxu3.dtb /media/boot
+  $ sudo cp -f arch/arm/boot/dts/exynos5422-odroidxu4.dtb /media/boot
+  $ sudo cp -f arch/arm/boot/dts/exynos5422-odroidxu3-lite.dtb /media/boot
+  $ sync
 
-```
-$ sudo cp .config /boot/config-`make kernelrelease`
-$ sudo update-initramfs -c -k `make kernelrelease`
-$ sudo mkimage -A arm -O linux -T ramdisk -C none -a 0 -e 0 -n uInitrd -d /boot/initrd.img-`make kernelrelease` /boot/uInitrd-`make kernelrelease`
-$ sudo cp /boot/uInitrd-`make kernelrelease` /media/boot/uInitrd
-$ sudo sync
-$ sudo reboot
-```
+  $ sudo cp .config /boot/config-`make kernelrelease`
+  $ sudo update-initramfs -c -k `make kernelrelease`
+  $ sudo mkimage -A arm -O linux -T ramdisk -C none -a 0 -e 0 -n uInitrd -d /boot/initrd.img-`make kernelrelease` /boot/uInitrd-`make kernelrelease`
+  $ sudo cp /boot/uInitrd-`make kernelrelease` /media/boot/uInitrd
+  $ sudo sync
+  $ sudo reboot
+
