@@ -507,5 +507,7 @@ static void __exit cpufreq_gov_dbs_exit(void)
 	cpufreq_unregister_governor(CPU_FREQ_GOV_ONDEMAND);
 }
 
+MODULE_LICENSE("GPL");
+
 module_init(cpufreq_gov_dbs_init);
 module_exit(cpufreq_gov_dbs_exit);
