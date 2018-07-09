@@ -1,7 +1,9 @@
 *
 
+!*Makefile
 !.gitignore
 !*/
 !*.rst
 !*.sh
 !*.c
+!*.h
