@@ -16,29 +16,29 @@
 #include <linux/init.h>
 #include <linux/module.h>
 
-static void cpufreq_gov_powersave_limits(struct cpufreq_policy *policy)
+static void cpufreq_gov_powersave2_limits(struct cpufreq_policy *policy)
 {
 	pr_debug("setting to %u kHz\n", policy->min);
 	__cpufreq_driver_target(policy, policy->min, CPUFREQ_RELATION_L);
 }
 
-static struct cpufreq_governor cpufreq_gov_powersave = {
+static struct cpufreq_governor cpufreq_gov_powersave2 = {
 	.name		= "powersave2",
-	.limits		= cpufreq_gov_powersave_limits,
+	.limits		= cpufreq_gov_powersave2_limits,
 	.owner		= THIS_MODULE,
 };
 
-static int __init cpufreq_gov_powersave_init(void)
+static int __init cpufreq_gov_powersave2_init(void)
 {
-	return cpufreq_register_governor(&cpufreq_gov_powersave);
+	return cpufreq_register_governor(&cpufreq_gov_powersave2);
 }
 
-static void __exit cpufreq_gov_powersave_exit(void)
+static void __exit cpufreq_gov_powersave2_exit(void)
 {
-	cpufreq_unregister_governor(&cpufreq_gov_powersave);
+	cpufreq_unregister_governor(&cpufreq_gov_powersave2);
 }
 
 MODULE_LICENSE("GPL");
 
-module_init(cpufreq_gov_powersave_init);
-module_exit(cpufreq_gov_powersave_exit);
+module_init(cpufreq_gov_powersave2_init);
+module_exit(cpufreq_gov_powersave2_exit);
