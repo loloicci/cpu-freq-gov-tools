@@ -23,7 +23,7 @@ static void cpufreq_gov_powersave_limits(struct cpufreq_policy *policy)
 }
 
 static struct cpufreq_governor cpufreq_gov_powersave = {
-	.name		= "powersave",
+	.name		= "originalpowersave",
 	.limits		= cpufreq_gov_powersave_limits,
 	.owner		= THIS_MODULE,
 };
