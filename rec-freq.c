@@ -99,5 +99,6 @@ int main(int argc, char *argv[]){
     usleep(interval);
   }
   fclose(of);
+  fprintf(stdout, "rec-freq done. exit.\n");
   exit(0);
 }
